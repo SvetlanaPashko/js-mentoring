@@ -5,7 +5,7 @@
  */
 function reverseString(str) {
 }
-
+tßß
 /**
  * 1. Calculate a century by given year
  * if a number is passed
