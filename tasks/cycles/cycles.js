@@ -40,10 +40,35 @@ function calculateDiscount(redemption) {
 
   for (k=1; k <= i; k++) {
     y = k*y;
-    console.log ('factorial of ', k, ' = ', y);
   }
+  console.log (y);
 }
 
+{
+  const i = 10; //10! = 3628800 
+  let y = 1;
+  let k = 1;
+
+  while (k <= i) {
+    y = k*y;
+    k++;
+  }
+  console.log (y);
+}
+
+{
+  const i = 10; //10! = 3628800 
+  let y = 1;
+  let k = 1;
+
+  do {
+    y = k*y;
+    k++; 
+  } 
+  while (k <= i);
+
+  console.log (y);
+}
 /**
  * return concatenated string from an array of substring
  */
@@ -76,5 +101,21 @@ function calculateDiscount(redemption) {
   }
   console.log(total);
 
+}
+
+{
+  const personIncomes = {
+    salary: 1985,
+    rent: -600,
+    interestOnDeposit: 250,
+    otherExpences: -300
+  };
+  let total =0;
+
+  for (let key in personIncomes) {
+    total += personIncomes[key];    
+  }
+  console.log(total);
+  
 }
 module.exports = calculateDiscount;
