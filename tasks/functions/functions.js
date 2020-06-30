@@ -3,7 +3,7 @@
  *
  */
 function add(a, b) {
-
+	return a + b;
 }
 
 /**
@@ -14,16 +14,24 @@ function add(a, b) {
  *    lastName: "Dou"
  * }
  */
-function getFullName(object) {
 
+// function getFullName2(object) {
+// 	let fullName = Object.values(object).join(' ');
+// 	return fullName;
+// }
+
+function getFullName(object) {
+	let fullName = object.firstName + ' ' + object.lastName;
+	return fullName;
 }
+
 
 /**
  * write fuction that checks is number is odd
  * true if odd, false if even
  */
 function isOdd(n) {
-
+	return (n % 2 != 0);
 }
 
 /**
@@ -32,6 +40,14 @@ function isOdd(n) {
  */
 function getShortest(wordArray) {
 
+	let shortestElement = wordArray[0];
+
+	for (let i = 1; i < wordArray.length; i++) {
+		if (shortestElement.length > wordArray[i].length) {
+			shortestElement = wordArray[i];
+		}
+	}
+	return shortestElement;
 }
 
 /**
@@ -39,7 +55,12 @@ function getShortest(wordArray) {
  * e.g getGoogle(5) should return "gooooogle"
  */
 function getGoogle(n) {
+	let word = ['g', '', 'gle'];
 
+	for (let i = 0; i < n; i++) {
+		word[1] += 'o';
+	}
+	return word.join('');
 }
 
 /**
@@ -52,9 +73,13 @@ function getGoogle(n) {
  * }
  */
 function getUser(firstName, lastName, age) {
-
+	const user = {
+		firstName: firstName || null,
+		lastName: lastName || null,
+		age: age || null,
+	}
+	return user;
 }
-
 /**
  * write function that calculates total path traveled.
  * path represended as array of objects with field distance and direction
@@ -62,18 +87,25 @@ function getUser(firstName, lastName, age) {
  */
 
 function getTotalPath(path) {
-
+	let dis = 0;
+	for (let i = 0; i < path.length; i++) {
+		dis += path[i].distance;
+	}
+	return dis;
 }
+
 
 /**
  * write a function that will calculate a discount considering the Amount
  * and the percentage (hint: you need to use the Closure here)
- * @param {amount} num 
  * @param {percentage} num 
+ * @param {Function <number>} num 
  */
 
-function discountFunction(amount) {
-
+function discountFunction(percentage) {
+	return function (number) {
+		return (number - (number * percentage / 100));
+	};
 }
 
 /**
@@ -89,10 +121,13 @@ const myObject = {
 	age: 25,
 	friends: ['Mike', 'Alan', 'Daniel'],
 	keys() {
-		//write your code here
+		const allKeys = Object.keys(myObject);
+		for (let key in allKeys) {
+			console.log(allKeys[key]);
+		}
 	},
 	call() {
-		//write your code here
+		return ('My name is ' + this.name + ' ' + this.lastName + ' and I am ' + this.age + ' years old. My best friend is ' + this.friends[2]);
 	}
 
 };
