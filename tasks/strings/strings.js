@@ -4,23 +4,47 @@
  * @param {string} str
  */
 function reverseString(str) {
+  if (typeof str == 'string') {
+    let arr = str.split('').reverse().join('');
+    return arr;
+  } else {
+    return ('This is not a string!');
+  }
 }
+
 
 /**
  * 1. Calculate a century by given year
  * if a number is passed
-* @param {number} year
-*/
+ * @param {number} year
+ */
 function centuryFromYear(year) {
+  if (typeof year == 'number') {
+    let century = year.toString().slice(0, 2);
+    let decade = year.toString().slice(2);
+    switch (decade) {
+      case decade = '00':
+        return century = Number(century)
+        break;
 
+      default:
+        return century = Number(century) + 1
+        break;
+    }
+  } else {
+    return 'It is not a number';
+  }
 }
+
 
 /**
  * Calculate count of the provided char in the string
  * @param {string} str
  * @param {string} char
  */
-function strCount(str, char) {
+function strCount(str, char) {
+  let arrayStr = str.split('').filter(element => (element === char));
+  return arrayStr.length;
 }
 
 /**
@@ -29,8 +53,15 @@ function strCount(str, char) {
  * @param {string} str - the initial string
  * @param {num} num - by wht amount of chars it should be truncated
  */
-function truncateString(str, num) {
+function truncateString(str, num) {
+  let arrString = str.split('');
+  if (arrString.length > num) {
+    arrString.splice(num, arrString.length - num);
+    arrString.push('...');
+    return arrString.join('');
+  } else return str;
 }
+
 
 /**
  * replace 10 with 'ten' word
@@ -40,7 +71,7 @@ function truncateString(str, num) {
  * console.log(replace10("231054")) // 23ten54
  */
 function replace10(text) {
-
+  return tenReplace = text.replace(/10/g, 'ten');
 }
 
 /**
@@ -51,8 +82,9 @@ function replace10(text) {
  * console.log(replaceConfidential("lorem [ipsum] si dolor")) // lorem [CONFIDENTIAL] si dolor
  */
 function replaceConfidential(text) {
-
+  return found = text.replace(/\[(.*?)\]/g, '[CONFIDENTIAL]');
 }
+
 
 module.exports = {
   reverseString,
