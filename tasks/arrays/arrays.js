@@ -12,7 +12,7 @@ function getCharactersNames(chars) {
  * @param {Array} chars
  */
 function printCharacterNames(chars) {
-    chars.map(element => console.log(element.name));
+    chars.forEach(element => console.log(element.name));
 }
 
 /**
@@ -21,7 +21,7 @@ function printCharacterNames(chars) {
  * @return {Array} - non human characters
  */
 function getNonHumanCharacters(chars) {
-    return nonHuman = chars.filter(sp => sp.species != 'Human');
+    return chars.filter(sp => sp.species !== 'Human');
 }
 
 /**

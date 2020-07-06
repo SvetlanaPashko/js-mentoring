@@ -24,11 +24,11 @@ function centuryFromYear(year) {
     let decade = year.toString().slice(2);
     switch (decade) {
       case decade = '00':
-        return century = Number(century)
+        return Number(century)
         break;
 
       default:
-        return century = Number(century) + 1
+        return Number(century) + 1
         break;
     }
   } else {
@@ -43,8 +43,7 @@ function centuryFromYear(year) {
  * @param {string} char
  */
 function strCount(str, char) {
-  let arrayStr = str.split('').filter(element => (element === char));
-  return arrayStr.length;
+  return str.split('').filter(element => (element === char)).length;
 }
 
 /**
@@ -71,7 +70,7 @@ function truncateString(str, num) {
  * console.log(replace10("231054")) // 23ten54
  */
 function replace10(text) {
-  return tenReplace = text.replace(/10/g, 'ten');
+  return text.replace(/10/g, 'ten');
 }
 
 /**
