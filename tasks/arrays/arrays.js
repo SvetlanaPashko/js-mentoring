@@ -32,7 +32,7 @@ function getNonHumanCharacters(chars) {
 
 // const chars = require('./characters.json')
 function getJerryInfo(chars) {
-    return chars.filter(Jerry => Jerry.name === 'Jerry Smith');
+    return chars.find(Jerry => Jerry.name === 'Jerry Smith');
 }
 // console.log(getJerryInfo(chars))
 
