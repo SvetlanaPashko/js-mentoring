@@ -4,6 +4,7 @@
  * @return {Array} - char names
  */
 function getCharactersNames(chars) {
+    return chars.map(element => element.name);
 }
 
 /**
@@ -11,6 +12,7 @@ function getCharactersNames(chars) {
  * @param {Array} chars
  */
 function printCharacterNames(chars) {
+    chars.forEach(element => console.log(element.name));
 }
 
 /**
@@ -19,6 +21,7 @@ function printCharacterNames(chars) {
  * @return {Array} - non human characters
  */
 function getNonHumanCharacters(chars) {
+    return chars.filter(sp => sp.species !== 'Human');
 }
 
 /**
@@ -26,8 +29,12 @@ function getNonHumanCharacters(chars) {
  * @param {Array} chars
  * @return {Object} - Jerry object
  */
+
+// const chars = require('./characters.json')
 function getJerryInfo(chars) {
+    return chars.find(Jerry => Jerry.name === 'Jerry Smith');
 }
+// console.log(getJerryInfo(chars))
 
 /**
  * check if all characters are human. return true if all, false if not
@@ -35,6 +42,7 @@ function getJerryInfo(chars) {
  * @return {boolean}
  */
 function isAllHuman(chars) {
+    return chars.every(human => human.species === 'Human');
 }
 
 /**
@@ -43,6 +51,7 @@ function isAllHuman(chars) {
  * @return {boolean}
  */
 function isAnyFishPerson(chars) {
+    return chars.some(fish => fish.type === 'Fish-Person');
 }
 
 /**
@@ -51,7 +60,7 @@ function isAnyFishPerson(chars) {
  * @return {number} - minimum element index
  */
 function minItem(arr) {
-    //PLACE YOUR CODE HERE
+    return arr.indexOf(Math.min(...arr));
 }
 
 module.exports = {
