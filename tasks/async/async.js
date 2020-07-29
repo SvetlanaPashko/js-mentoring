@@ -36,8 +36,13 @@ async function printDataAsyncAwait() {
  * throw error data from callbackFunctionError
  */
 function handleErrorCallback() {
-    throw new Error('Error');
-
+    callError(function (error, success) {
+        if (error) {
+            throw error;
+        } else {
+            return success;
+        }
+    });
 }
 
 
