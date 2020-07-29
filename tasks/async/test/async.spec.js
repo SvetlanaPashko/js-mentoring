@@ -1,5 +1,10 @@
-const { describe, it } = require('mocha');
-const { expect } = require('chai');
+const {
+    describe,
+    it
+} = require('mocha');
+const {
+    expect
+} = require('chai');
 const sinon = require('sinon');
 const {
     printDataCallback,
@@ -34,7 +39,9 @@ describe('promise', () => {
     });
 
     it('should handle error', () => {
-        expect(handlePromiseError).to.throw('Error');
+        return handlePromiseError().catch(err => {
+            expect(err.message).to.equal('Error');
+        });
     });
 });
 
