@@ -20,11 +20,9 @@ const fs = require('fs');
 const path = require('path');
 const file1 = require('./test.json');
 
-const file2Data = file1.list.entries.map(element => {
-    return {
-        'docId': 'http://doc.epam.com/' + element.entry.name.slice(0, element.entry.name.length - 5)
-    };
-});
+const file2Data = file1.list.entries.map(element => ({
+    'docId': 'http://doc.epam.com/' + element.entry.name.slice(0, element.entry.name.length - 5)
+}))
 
 const file2Path = path.join(__dirname, 'parsed.json');
 
